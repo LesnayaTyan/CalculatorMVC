@@ -1,0 +1,73 @@
+﻿@model WebCalculator.Models.Calculator
+
+
+        
+@{
+    ViewData["Title"] = "Create";
+    
+}
+
+
+
+<h4>Calculator</h4>
+<hr />
+<div class="row">
+   <div class="col-md-4">
+        <p class="KalkulackaResult"> @Html.DisplayFor(model => model.Result)</p>
+        @*<p class="Chyba"> @Html.DisplayFor(model => model.Chyba)</p>*@
+
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="PrvniCislo" class="control-label"></label>
+                <input asp-for="PrvniCislo" class="form-control" />
+                <span asp-validation-for="PrvniCislo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DruheCislo" class="control-label"></label>
+                <input asp-for="DruheCislo" class="form-control" />
+                <span asp-validation-for="DruheCislo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <label asp-for="Operace" class="control-label"></label>
+                <input asp-for="Operace" class="form-control" />
+                <span asp-validation-for="Operace" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                        <input type="submit" value="Spocitat" class="btn btn-primary" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input asp-action="Index" type="submit" value="Cela Historie" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Prvni Cislo</th>
+      <th scope="col">Operace</th>
+      <th scope="col">Druhe Cislo</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+            <td>@Html.DisplayFor(model => model.PrvniCislo)</td>
+            <td>@Html.DisplayFor(model => model.Operace)</td>
+            <td>@Html.DisplayFor(model => model.DruheCislo)</td>
+            <td>@Html.DisplayFor(model => model.Result)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebCalculator.Models.Calculator>
+
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+
+<div>
+<input asp-action="Create" type="submit" value="Kalkulacka" class="btn btn-primary" />
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.PrvniCislo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Operace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DruheCislo)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Result)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrvniCislo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DruheCislo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>
+            <td>
+
+            </td>
+        </tr>
+}
+    </tbody>
+
+</table>
+
+ 

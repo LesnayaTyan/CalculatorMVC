@@ -1,0 +1,76 @@
+﻿@model WebCalculator.Models.Calculator
+
+@{
+    ViewData["Title"] = "Kalkulačka";
+}
+@*<body>
+    <br />
+    <div class="result"> <p style="font-size: 2em;">@Model.Result</p></div>
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Index">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="PrvniCislo" class="control-label"></label>
+                    <br />
+                    <input asp-for="PrvniCislo" class="form-control" />
+                    <span asp-validation-for="PrvniCislo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DruheCislo" class="control-label"></label>
+                    <br />
+                    <input asp-for="DruheCislo" class="form-control" />
+                    <span asp-validation-for="DruheCislo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Operace" class="control-label"></label>
+                    <br />
+
+@*                   @Html.DropDownListFor(model => model.Operace, new SelectList(Model.MozneOperace, "Value", "Text"))
+                    <span asp-validation-for="Operace" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Vypočítej" class="btn btn-success" />
+
+                </div>
+            </form>
+
+</body>
+*@
+
+
+
+ @*    <table class="table">
+
+ @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrvniCislo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DruheCislo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vysledek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operace)
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        }
+          </div>
+    </div>
+
+*@
+
